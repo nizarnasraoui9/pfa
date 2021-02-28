@@ -8,20 +8,18 @@ public class Image {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     private String path;
-    private String description;
+
     @ManyToOne
     @JoinTable(name="id")
     private Personne personne;
 
     public Image() {
         this.path = null;
-        this.description = null;
     }
 
-    public Image(long id, String path, String description) {
+    public Image(String path) {
 
         this.path = path;
-        this.description = description;
     }
 
     public long getId() {
@@ -40,11 +38,7 @@ public class Image {
         this.path = path;
     }
 
-    public String getDescription() {
-        return description;
-    }
 
-    public void setDescription(String description) {
-        this.description = description;
-    }
+
+
 }
