@@ -158,7 +158,11 @@ public abstract class Personne {
         this.coutMedicaments = coutMedicaments;
     }
 
+    public List<Image> getImages() {
+        return images;
+    }
 
-
-
+    public void setImages(List<Image> images) {
+        this.images = images;
+    }
 }

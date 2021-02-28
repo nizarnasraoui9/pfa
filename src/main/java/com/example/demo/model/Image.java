@@ -38,7 +38,11 @@ public class Image {
         this.path = path;
     }
 
+    public Personne getPersonne() {
+        return personne;
+    }
 
-
-
+    public void setPersonne(Personne personne) {
+        this.personne = personne;
+    }
 }
