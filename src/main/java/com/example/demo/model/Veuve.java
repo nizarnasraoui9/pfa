@@ -3,16 +3,18 @@ package com.example.demo.model;
 import java.util.*;
 
 import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.PrimaryKeyJoinColumn;
 
 @Entity
 public class Veuve extends Personne {
+
     private int nombreEnfants;
     private int nombreEnfantsParrainees;
     private int RIB;
     private Date dateDecesMari;
     public Veuve() {
-        super();
-        // TODO Auto-generated constructor stub
+
     }
     public Veuve(int id, int cIN, int numDossier, Date dateOuvertureDossier, String nom, String prenom,
                  Date dateDeNaissance, int numTel, String adresse, String niveauScolaire, String typeTravaille,

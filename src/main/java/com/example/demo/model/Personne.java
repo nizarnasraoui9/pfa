@@ -3,13 +3,11 @@ import java.util.*;
 
 import javax.persistence.*;
 
+@Inheritance(strategy = InheritanceType.JOINED)
 @Entity
-
-@Inheritance(strategy= InheritanceType.JOINED)
-public class Personne {
+public abstract class Personne {
 
     @GeneratedValue(strategy=GenerationType.IDENTITY)
-
     @Id
     protected long id;
     protected int CIN;
@@ -28,6 +26,9 @@ public class Personne {
     protected String siutationSanitaire;
     protected String typeCouvertureSociale;
     protected float coutMedicaments;
+    @OneToMany(mappedBy = "personne")
+    List<Image> images=new ArrayList<Image>();
+
     public Personne() {
 
     }
