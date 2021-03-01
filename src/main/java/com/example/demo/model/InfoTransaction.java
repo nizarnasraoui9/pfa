@@ -4,7 +4,7 @@ import java.sql.Date;
 
 public class InfoTransaction {
     long parrainId;
-    long PersonneId;
+    long personneId;
     float montant;
     Date date;
 
@@ -12,24 +12,12 @@ public class InfoTransaction {
         return parrainId;
     }
 
-    public void setParrainId(long parrainId) {
-        this.parrainId = parrainId;
-    }
-
     public long getPersonneId() {
-        return PersonneId;
-    }
-
-    public void setPersonneId(long personneId) {
-        PersonneId = personneId;
+        return personneId;
     }
 
     public float getMontant() {
         return montant;
-    }
-
-    public void setMontant(float montant) {
-        this.montant = montant;
     }
 
     public Date getDate() {
@@ -39,6 +27,4 @@ public class InfoTransaction {
     public void setDate(Date date) {
         this.date = date;
     }
-
-
 }

@@ -5,5 +5,7 @@ import com.example.demo.model.TransactionId;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 
+import java.util.List;
+
 public interface TransactionRepository extends CrudRepository<Transaction, TransactionId> {
 }

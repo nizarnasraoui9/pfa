@@ -174,4 +174,29 @@ public abstract class Personne {
     public void setParrains(Set<Parrain> parrains) {
         this.parrains = parrains;
     }
+
+    @Override
+    public String toString() {
+        return "Personne{" +
+                "id=" + id +
+                ", CIN=" + CIN +
+                ", numDossier=" + numDossier +
+                ", dateOuvertureDossier=" + dateOuvertureDossier +
+                ", nom='" + nom + '\'' +
+                ", prenom='" + prenom + '\'' +
+                ", dateDeNaissance=" + dateDeNaissance +
+                ", numTel=" + numTel +
+                ", adresse='" + adresse + '\'' +
+                ", niveauScolaire='" + niveauScolaire + '\'' +
+                ", typeTravaille='" + typeTravaille + '\'' +
+                ", situationTravaille='" + situationTravaille + '\'' +
+                ", revenueMonsuel=" + revenueMonsuel +
+                ", montantAideMonsuelle=" + montantAideMonsuelle +
+                ", siutationSanitaire='" + siutationSanitaire + '\'' +
+                ", typeCouvertureSociale='" + typeCouvertureSociale + '\'' +
+                ", coutMedicaments=" + coutMedicaments +
+                ", images=" + images +
+                ", parrains=" + parrains +
+                '}';
+    }
 }
