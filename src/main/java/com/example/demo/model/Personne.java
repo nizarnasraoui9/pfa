@@ -6,9 +6,8 @@ import javax.persistence.*;
 @Inheritance(strategy = InheritanceType.JOINED)
 @Entity
 public abstract class Personne {
-
-    @GeneratedValue(strategy=GenerationType.IDENTITY)
     @Id
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
     protected long id;
     protected int CIN;
     protected int numDossier;
@@ -28,6 +27,8 @@ public abstract class Personne {
     protected float coutMedicaments;
     @OneToMany(mappedBy = "personne")
     List<Image> images=new ArrayList<Image>();
+    @OneToMany
+    Set<Parrain> parrains=new HashSet<Parrain>();
 
     public Personne() {
 
@@ -164,5 +165,13 @@ public abstract class Personne {
 
     public void setImages(List<Image> images) {
         this.images = images;
+    }
+
+    public Set<Parrain> getParrains() {
+        return parrains;
+    }
+
+    public void setParrains(Set<Parrain> parrains) {
+        this.parrains = parrains;
     }
 }
