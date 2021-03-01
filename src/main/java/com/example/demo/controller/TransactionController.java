@@ -6,8 +6,10 @@ import com.example.demo.model.Transaction;
 import com.example.demo.repository.TransactionRepository;
 import com.example.demo.service.TransactionService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.web.bind.annotation.*;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 @RestController
@@ -28,6 +30,15 @@ public class TransactionController {
             System.out.println(e.toString());
         }
     }
-    
+    @GetMapping("transaction/{id}")
+    @ResponseBody
+    public ArrayList<Transaction> getTransactions(@PathVariable("id")long id){
+        ArrayList<Transaction>transactions=new ArrayList<Transaction>();
+        transactions=transactionRepository.getTransactionById(id);
+        System.out.println(transactions);
+        return transactions;
+
+
+    }
 
 }

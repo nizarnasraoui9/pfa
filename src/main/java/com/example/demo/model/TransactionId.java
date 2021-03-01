@@ -1,22 +1,25 @@
 package com.example.demo.model;
 
-import javax.persistence.Column;
-import javax.persistence.Embeddable;
+import com.example.demo.repository.TransactionRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+
+import javax.persistence.*;
 import java.io.Serializable;
+import java.util.ArrayList;
 
 @Embeddable
 public class TransactionId implements Serializable {
-
-    @Column(name="parrainId")
     private Long parrainId;
-    @Column(name="id")
-    private Long id;
+    private Long personneId;
+    private long transactionNum;
 
 
 
-    public TransactionId(Long parrainId, Long id) {
+
+    public TransactionId(Long parrainId, Long personneId,long numberOfTransactions) {
         this.parrainId = parrainId;
-        this.id = id;
+        this.personneId = personneId;
+        this.transactionNum=numberOfTransactions++;
     }
 
     public TransactionId() {
@@ -32,12 +35,18 @@ public class TransactionId implements Serializable {
     }
 
     public Long getId() {
-        return id;
+        return personneId;
     }
 
     public void setId(Long id) {
-        this.id = id;
+        this.personneId = id;
     }
 
+    public long getTransactionNum() {
+        return transactionNum;
+    }
 
+    public void setTransactionNum(long transactionNum) {
+        this.transactionNum = transactionNum;
+    }
 }

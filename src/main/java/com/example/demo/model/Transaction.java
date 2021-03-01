@@ -6,6 +6,7 @@ import java.sql.Date;
 
 @Entity
 public class Transaction implements Serializable {
+
     @EmbeddedId
     private TransactionId transactionId;
     private float montant;
@@ -17,15 +18,16 @@ public class Transaction implements Serializable {
 
     @ManyToOne
     @MapsId("id")
-    @JoinColumn(name="id")
+    @JoinColumn(name="personneId")
     private Personne personne;
 
     public Transaction() {
 
     }
 
-    public Transaction(float montant, Date date, Parrain parrain, Personne personne) {
-        this.transactionId=new TransactionId(parrain.getId(), personne.id);
+    public Transaction(float montant, Date date, Parrain parrain, Personne personne,long numberOfTransactions) {
+
+        this.transactionId=new TransactionId(parrain.getId(), personne.id,numberOfTransactions);
         this.montant = montant;
         this.date = date;
         this.parrain = parrain;

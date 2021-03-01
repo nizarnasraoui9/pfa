@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.sql.Date;
+import java.util.ArrayList;
 
 @Service
 public class TransactionService {
@@ -31,7 +32,9 @@ public class TransactionService {
             throw new PersonNotFound();
         }
         System.out.println(personne);
-        Transaction newTransaction=new Transaction(montant,date,parrain,personne);
+        ArrayList<Transaction> transactions=transactionRepository.getTransactionById(personneId);
+        int numberOfTransactions=transactions.size();
+        Transaction newTransaction=new Transaction(montant,date,parrain,personne,numberOfTransactions);
         transactionRepository.save(newTransaction);
 
     }
