@@ -13,10 +13,11 @@ public class AdminController {
     public void addAdmin(@RequestBody Admin admin){
         adminRepository.save(admin);
     }
-    @GetMapping("admin")
+    @GetMapping("admin/{username}/{password}")
     @ResponseBody
-    public Boolean signIn(@RequestBody Admin admin){
-        Admin newAdmin=adminRepository.findByPasswordAndAndUsername(admin.getPassword(),admin.getUsername());
+    public Boolean signIn(@PathVariable("username")String username,@PathVariable("password")String password){
+        Admin newAdmin=adminRepository.findByPasswordAndAndUsername(password,username);
+        System.out.println(username + password);
         if(newAdmin!=null){
             return true;
         }
@@ -25,6 +26,4 @@ public class AdminController {
         }
 
     }
-
-
 }
