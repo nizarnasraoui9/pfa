@@ -10,9 +10,8 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import java.util.ArrayList;
 
 @RepositoryRestResource(collectionResourceRel = "veuve", path = "veuve")
-
 @Repository
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = "*")
 public interface VeuveRepository extends JpaRepository<Veuve,Long> {
 
 
