@@ -15,28 +15,15 @@ public class Orphelin extends Personne {
         super();
         // TODO Auto-generated constructor stub
     }
-    public Orphelin(long id, int cIN, int numDossier, Date dateOuvertureDossier, String nom, String prenom,
-                    Date dateDeNaissance, int numTel, String adresse, String niveauScolaire, String typeTravaille,
-                    String situationTravaille, float revenueMonsuel, float montantAideMonsuelle, String siutationSanitaire,
-                    String typeCouvertureSociale, float coutMedicaments) {
-        super(cIN, numDossier, dateOuvertureDossier, nom, prenom, dateDeNaissance, numTel, adresse, niveauScolaire,
-                typeTravaille, situationTravaille, revenueMonsuel, montantAideMonsuelle, siutationSanitaire,
-                typeCouvertureSociale, coutMedicaments);
-        // TODO Auto-generated constructor stub
-    }
 
-    public Orphelin(long id, int cIN, int numDossier, Date dateOuvertureDossier, String nom, String prenom,
-                    Date dateDeNaissance, int numTel, String adresse, String niveauScolaire, String typeTravaille,
-                    String situationTravaille, float revenueMonsuel, float montantAideMonsuelle, String siutationSanitaire,
-                    String typeCouvertureSociale, float coutMedicaments,String sexe, String situationConjugale, boolean etudie, boolean parraine) {
-        super(cIN, numDossier, dateOuvertureDossier, nom, prenom, dateDeNaissance, numTel, adresse, niveauScolaire,
-                typeTravaille, situationTravaille, revenueMonsuel, montantAideMonsuelle, siutationSanitaire,
-                typeCouvertureSociale, coutMedicaments);
+    public Orphelin(int cIN, int numDossier, Date dateOuvertureDossier, String nom, String prenom, Date dateDeNaissance, int numTel, String adresse, String niveauScolaire, String infoTravail, float revenueMonsuel, float montantAideMonsuelle, String siutationSanitaire, String typeCouvertureSociale, float coutMedicaments, String sexe, String situationConjugale, boolean etudie, boolean parraine) {
+        super(cIN, numDossier, dateOuvertureDossier, nom, prenom, dateDeNaissance, numTel, adresse, niveauScolaire, infoTravail, revenueMonsuel, montantAideMonsuelle, siutationSanitaire, typeCouvertureSociale, coutMedicaments);
         this.sexe = sexe;
         this.situationConjugale = situationConjugale;
         this.etudie = etudie;
         this.parraine = parraine;
     }
+
     public String getSexe() {
         return sexe;
     }

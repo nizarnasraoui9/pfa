@@ -16,15 +16,15 @@ public class Veuve extends Personne {
     public Veuve() {
 
     }
-    public Veuve(int id, int cIN, int numDossier, Date dateOuvertureDossier, String nom, String prenom,
-                 Date dateDeNaissance, int numTel, String adresse, String niveauScolaire, String typeTravaille,
-                 String situationTravaille, float revenueMonsuel, float montantAideMonsuelle, String siutationSanitaire,
-                 String typeCouvertureSociale, float coutMedicaments) {
-        super(id, cIN, dateOuvertureDossier, nom, prenom, dateDeNaissance, numTel, adresse, niveauScolaire,
-                typeTravaille, situationTravaille, revenueMonsuel, montantAideMonsuelle, siutationSanitaire,
-                typeCouvertureSociale, coutMedicaments);
-        // TODO Auto-generated constructor stub
+
+    public Veuve(int cIN, int numDossier, Date dateOuvertureDossier, String nom, String prenom, Date dateDeNaissance, int numTel, String adresse, String niveauScolaire, String infoTravail, float revenueMonsuel, float montantAideMonsuelle, String siutationSanitaire, String typeCouvertureSociale, float coutMedicaments, int nombreEnfants, int nombreEnfantsParrainees, int RIB, Date dateDecesMari) {
+        super(cIN, numDossier, dateOuvertureDossier, nom, prenom, dateDeNaissance, numTel, adresse, niveauScolaire, infoTravail, revenueMonsuel, montantAideMonsuelle, siutationSanitaire, typeCouvertureSociale, coutMedicaments);
+        this.nombreEnfants = nombreEnfants;
+        this.nombreEnfantsParrainees = nombreEnfantsParrainees;
+        this.RIB = RIB;
+        this.dateDecesMari = dateDecesMari;
     }
+
     public int getNombreEnfants() {
         return nombreEnfants;
     }

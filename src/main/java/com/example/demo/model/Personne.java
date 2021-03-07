@@ -10,7 +10,6 @@ public abstract class Personne {
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     protected long id;
     protected int CIN;
-    protected int numDossier;
     protected Date dateOuvertureDossier;
     protected String nom;
     protected String prenom;
@@ -18,8 +17,7 @@ public abstract class Personne {
     protected int numTel;
     protected String adresse;
     protected String niveauScolaire;
-    protected String typeTravaille;
-    protected String situationTravaille;
+    protected String infoTravail;
     protected float revenueMonsuel;
     protected float montantAideMonsuelle;
     protected String siutationSanitaire;
@@ -34,12 +32,11 @@ public abstract class Personne {
 
     }
     public Personne( int cIN, int numDossier, Date dateOuvertureDossier, String nom, String prenom,
-                     Date dateDeNaissance, int numTel, String adresse, String niveauScolaire, String typeTravaille,
-                     String situationTravaille, float revenueMonsuel, float montantAideMonsuelle, String siutationSanitaire,
+                     Date dateDeNaissance, int numTel, String adresse, String niveauScolaire, String infoTravail,
+                     float revenueMonsuel, float montantAideMonsuelle, String siutationSanitaire,
                      String typeCouvertureSociale, float coutMedicaments) {
         super();
         CIN = cIN;
-        this.numDossier = numDossier;
         this.dateOuvertureDossier = dateOuvertureDossier;
         this.nom = nom;
         this.prenom = prenom;
@@ -47,8 +44,7 @@ public abstract class Personne {
         this.numTel = numTel;
         this.adresse = adresse;
         this.niveauScolaire = niveauScolaire;
-        this.typeTravaille = typeTravaille;
-        this.situationTravaille = situationTravaille;
+        this.infoTravail = infoTravail;
         this.revenueMonsuel = revenueMonsuel;
         this.montantAideMonsuelle = montantAideMonsuelle;
         this.siutationSanitaire = siutationSanitaire;
@@ -67,12 +63,6 @@ public abstract class Personne {
     }
     public void setCIN(int cIN) {
         CIN = cIN;
-    }
-    public int getNumDossier() {
-        return numDossier;
-    }
-    public void setNumDossier(int numDossier) {
-        this.numDossier = numDossier;
     }
     public Date getDateOuvertureDossier() {
         return dateOuvertureDossier;
@@ -115,18 +105,6 @@ public abstract class Personne {
     }
     public void setNiveauScolaire(String niveauScolaire) {
         this.niveauScolaire = niveauScolaire;
-    }
-    public String getTypeTravaille() {
-        return typeTravaille;
-    }
-    public void setTypeTravaille(String typeTravaille) {
-        this.typeTravaille = typeTravaille;
-    }
-    public String getSituationTravaille() {
-        return situationTravaille;
-    }
-    public void setSituationTravaille(String situationTravaille) {
-        this.situationTravaille = situationTravaille;
     }
     public float getRevenueMonsuel() {
         return revenueMonsuel;
@@ -175,12 +153,20 @@ public abstract class Personne {
         this.parrains = parrains;
     }
 
+
+    public String getInfoTravail() {
+        return infoTravail;
+    }
+
+    public void setInfoTravail(String infoTravail) {
+        this.infoTravail = infoTravail;
+    }
+
     @Override
     public String toString() {
         return "Personne{" +
                 "id=" + id +
                 ", CIN=" + CIN +
-                ", numDossier=" + numDossier +
                 ", dateOuvertureDossier=" + dateOuvertureDossier +
                 ", nom='" + nom + '\'' +
                 ", prenom='" + prenom + '\'' +
@@ -188,8 +174,6 @@ public abstract class Personne {
                 ", numTel=" + numTel +
                 ", adresse='" + adresse + '\'' +
                 ", niveauScolaire='" + niveauScolaire + '\'' +
-                ", typeTravaille='" + typeTravaille + '\'' +
-                ", situationTravaille='" + situationTravaille + '\'' +
                 ", revenueMonsuel=" + revenueMonsuel +
                 ", montantAideMonsuelle=" + montantAideMonsuelle +
                 ", siutationSanitaire='" + siutationSanitaire + '\'' +
