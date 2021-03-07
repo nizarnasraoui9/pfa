@@ -13,6 +13,7 @@ import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 @RestController
+@CrossOrigin(origins = "http://localhost:4200")
 public class TransactionController {
     @Autowired
     TransactionService transactionService;
