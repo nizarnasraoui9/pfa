@@ -1,4 +1,5 @@
 package com.example.demo.model;
+
 import java.util.*;
 
 import javax.persistence.*;
@@ -24,6 +25,7 @@ public abstract class Personne {
     protected String typeCouvertureSociale;
     protected float coutMedicaments;
     @OneToMany(mappedBy = "personne")
+
     List<Image> images=new ArrayList<Image>();
     @OneToMany
     Set<Parrain> parrains=new HashSet<Parrain>();

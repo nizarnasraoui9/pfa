@@ -1,5 +1,8 @@
 package com.example.demo.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
+
 import javax.persistence.*;
 
 @Entity
@@ -11,6 +14,7 @@ public class Image {
 
     @ManyToOne
     @JoinTable(name="id")
+    @JsonIgnore
     private Personne personne;
 
     public Image() {
