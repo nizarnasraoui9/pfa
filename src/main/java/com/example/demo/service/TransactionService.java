@@ -25,7 +25,6 @@ public class TransactionService {
         Date date=transaction.getDate();
         long parrainId=transaction.getParrainId();
         long personneId=transaction.getPersonneId();
-        System.out.println(parrainId+" "+personneId);
         Personne personne= personneRepo.findById(parrainId);
         Parrain parrain=parrainRepository.findById(parrainId);
         if(personne==null || parrain==null){

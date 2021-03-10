@@ -1,12 +1,13 @@
 package com.example.demo.model;
 
 import java.sql.Date;
+import java.util.Calendar;
 
 public class InfoTransaction {
     long parrainId;
     long personneId;
     float montant;
-    Date date;
+    Date date = new java.sql.Date(Calendar.getInstance().getTime().getTime());
 
     public long getParrainId() {
         return parrainId;
