@@ -12,7 +12,7 @@ public class Parrain {
     private String nom;
     private String prenom;
     private int telephone;
-    @OneToMany
+    @ManyToMany
     Set<Personne> personnes= new HashSet<>();
     public Parrain() {
         this.nom=null;
