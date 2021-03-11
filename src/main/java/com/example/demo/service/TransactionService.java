@@ -25,7 +25,7 @@ public class TransactionService {
         Date date=transaction.getDate();
         long parrainId=transaction.getParrainId();
         long personneId=transaction.getPersonneId();
-        Personne personne= personneRepo.findById(parrainId);
+        Personne personne= personneRepo.findById(personneId);
         Parrain parrain=parrainRepository.findById(parrainId);
         if(personne==null || parrain==null){
             throw new PersonNotFound();

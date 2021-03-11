@@ -29,10 +29,12 @@ public class ParrainController {
     public void addParrin(@PathVariable("nomParrain")String nomParrin,@PathVariable("prenomParrain")String prenomParrain,
                           @PathVariable("idPersonne")long idPersonne){
         Parrain parrain=parrainRepository.findByNomAndPrenom(nomParrin,prenomParrain);
-        Personne personne=personneRepository.findById(idPersonne);
-        Set<Parrain> personneParrain= personne.getParrains();
-        personneParrain.add(parrain);
-        personneCrudRepository.save(personne);
+        if(parrain !=null){
+            Personne personne=personneRepository.findById(idPersonne);
+            Set<Parrain> personneParrain= personne.getParrains();
+            personneParrain.add(parrain);
+            personneCrudRepository.save(personne);
+        }
 
     }
 }
