@@ -28,7 +28,7 @@ public abstract class Personne {
     @OneToMany(mappedBy = "personne")
 
     List<Image> images=new ArrayList<Image>();
-    @OneToMany
+    @ManyToMany
     Set<Parrain> parrains=new HashSet<Parrain>();
 
     public Personne() {
