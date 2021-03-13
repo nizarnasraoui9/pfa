@@ -19,4 +19,9 @@ public class RecherchePersonne {
         return personneRepository.findByNomAndPrenom(nom,prenom);
 
     }
+    @GetMapping(path="recherche/{matricule}")
+    public ArrayList<Personne> rechercherPersonne(@PathVariable("matricule")long matricule){
+        return personneRepository.findByMatricule(matricule);
+
+    }
 }

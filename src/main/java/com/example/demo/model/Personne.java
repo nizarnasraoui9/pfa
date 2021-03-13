@@ -10,6 +10,7 @@ public abstract class Personne {
     @Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     protected long id;
+    protected long matricule;
     protected long cin;
     protected Date dateOuvertureDossier;
     protected String nom;
@@ -33,11 +34,12 @@ public abstract class Personne {
     public Personne() {
 
     }
-    public Personne( long cin, Date dateOuvertureDossier, String nom, String prenom,
+    public Personne( long matricule, long cin, Date dateOuvertureDossier, String nom, String prenom,
                      Date dateDeNaissance, int numTel, String adresse, String niveauScolaire, String infoTravail,
                      float revenueMonsuel, float montantAideMonsuelle, String siutationSanitaire,
                      String typeCouvertureSociale, float coutMedicaments) {
         super();
+        this.matricule=matricule;
         cin = cin;
         this.dateOuvertureDossier = dateOuvertureDossier;
         this.nom = nom;
@@ -188,5 +190,13 @@ public abstract class Personne {
 
     public void setParrains(Set<Parrain> parrains) {
         this.parrains = parrains;
+    }
+
+    public long getMatricule() {
+        return matricule;
+    }
+
+    public void setMatricule(long matricule) {
+        this.matricule = matricule;
     }
 }
