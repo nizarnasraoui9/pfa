@@ -12,5 +12,6 @@ public interface PersonneRepository extends JpaRepository<Personne,Long> {
     Personne findById(long id);
     ArrayList<Personne> findByNomAndPrenom(String nom, String prenom);
     ArrayList<Personne> findByMatricule(long matricule);
+    Personne findByMatriculeAndNomAndPrenom(long matricule, String nom, String prenom);
 }
 
